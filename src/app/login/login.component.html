@@ -1,0 +1,50 @@
+
+
+  
+
+<div class="img">
+  <div class="imgcontainer"> 
+    
+    </div>
+    <div align="center">
+        
+    <h2 style="color:orange;">Login</h2> 
+    
+    <form class="form-container" role="form" #form="ngForm" autocomplete="off">
+            
+          
+  
+        <div class="container"> 
+            <div class=input>
+            <label for="uname"><b>Username</b></label>
+            <input type="text" id="name" name="name" class="form-control" required minlength="4" [(ngModel)]="name" #names="ngModel" >
+        <div *ngIf="names.invalid && (names.dirty || names.touched)" class="validation-error" style="color: red;">
+                        <b>name is required with minimum of 4 letters or characters</b>
+                        
+                 </div>
+                </div>
+
+  <div class="input">
+        <label for="psw"><b>Password</b></label>
+            <input type="text" id="password" name="password" class="form-control" required [(ngModel)]="password" #passwords="ngModel" >
+          
+                <div *ngIf="passwords.invalid && (passwords.dirty || passwords.touched)" class="validation-error" style="color: red;" >
+                        <b>Oh!Sorry.....    Password Is Required</b>
+                        </div>
+  
+  </div>
+  <button class="btn btn-info btn-block" type="submit" style="background-color:red" [disabled]="form.invalid" (click)="login()">Login</button>
+  
+         
+          <input type="checkbox" checked="checked"> <b>Remember me!!</b>
+        </div> 
+  
+        <div class="container" style="background-color:#f1f1f1"> 
+            
+            
+        </div> 
+    </form> 
+</div>
+  
+
+  

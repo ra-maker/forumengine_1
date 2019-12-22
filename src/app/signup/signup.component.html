@@ -1,0 +1,49 @@
+
+
+<div class=img>
+
+
+
+<!-- <form class="form-container" role="form" #form="ngForm" autocomplete="off"> -->
+<form  style="border:1px solid #ccc" class="form-container" role="form" #form="ngForm" autocomplete="off">
+  <div class="container">
+        <div align="center">
+               
+               <h1 style="color:orange;">Signup</h1> </div>
+               
+
+   
+    <hr>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter The User Name" title="Username Should Enter" name="uname1"  required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" name="email" placeholder="Enter your Email" class="form-control"  pattern=".+[a-z]+@gmail.com"   [(ngModel)]="email" #emails="ngModel"><br><br>
+
+   
+                <div *ngIf="emails.invalid && (emails.dirty || emails.touched)" class="validation-error" style="color: red;">
+                             
+                 </div>
+                 
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" title="password should contain 6 letters"  name="psw" [(ngModel)]="psw"required>
+
+    <label for="psw-repeat"><b>Repeat Password </b></label>
+    <input type="password" placeholder="Repeat Password" title="password should be same as above password"  name="psw-repeat" [(ngModel)]="confirmpsw" required>
+    
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+    
+    <p style="color:orange;">By creating an account you agree to our <a href="Terms" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="reset" class="cancelbtn" (click)="Reset()">Reset</button>
+      <button class="btn btn-info btn-block" type="submit" style="background-color:green" [disabled]="form.invalid" (click)="Signup()">Signup</button>
+   
+    </div>
+  </div>
+</form>
+</div>
+<!-- </form> -->
+
